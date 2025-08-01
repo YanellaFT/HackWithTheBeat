@@ -1,18 +1,22 @@
 /* VARIABLES */
-let piano; 
+let piano;
 
-/* PRELOAD LOADS FILES */
+
 function preload(){
-  
+  piano = loadImage("assets/piano.png");
 }
 
-/* SETUP RUNS ONCE */
+
 function setup() {
-  createCanvas(400,400);
+  createCanvas(600,500);
+  background("#555661");
+  image(piano, 0, 250, 600, 250);
 
+  //textFont(cursive);
+  text("Play the piano and watch it make art", 100, 100);
 }
 
-/* DRAW LOOP REPEATS */
+
 function draw() {
 
 }
