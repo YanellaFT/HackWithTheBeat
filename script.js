@@ -7,7 +7,7 @@ let CkeyAud, DkeyAud, EkeyAud, FkeyAud, GkeyAud, AkeyAud, BkeyAud;
 function preload(){
   piano = loadImage("assets/piano.png");
 
-  CkeyAud = loadSound("assets/Ckey.webm");
+  //CkeyAud = loadSound("assets/Ckey.webm");
 }
 
 
@@ -22,10 +22,27 @@ function setup() {
   
 
   stroke("white");
-  Ckey = new Sprite(45, 445, 75, 100);
+  Ckey = new Sprite(45, 445, 75, 100, "k");
   Ckey.color = "white";
   //Ckey.layer = 2;
 
+  Dkey = new Sprite(130, 445, 75, 100, "k");
+  Dkey.color = "white";
+
+  Ekey = new Sprite(215, 445, 75, 100, "k");
+  Ekey.color = "white";
+
+  Fkey = new Sprite(300, 445, 75, 100, "k");
+  Fkey.color = "white";
+
+  Gkey = new Sprite(385, 445, 75, 100, "k");
+  Gkey.color = "white";
+
+  Akey = new Sprite(470, 445, 75, 100, "k");
+  Akey.color = "white";
+
+  Bkey = new Sprite(555, 445, 75, 100, "k");
+  Bkey.color = "white";
 
 
 }
@@ -35,7 +52,32 @@ function draw() {
 
   if (Ckey.mouse.pressed()) {
     print("Ckey");
-    CkeyAud.play();
+    //CkeyAud.play();
+  }
+
+  if (Dkey.mouse.pressed()) {
+    print("Dkey");
+
+  }
+
+  if (Ekey.mouse.pressed()) {
+    print("Ekey");
+
+  }
+
+  if (Fkey.mouse.pressed()) {
+    print("Fkey");
+
+  }
+
+  if (Gkey.mouse.pressed()) {
+    print("Gkey");
+
+  }
+
+  if (Akey.mouse.pressed()) {
+    print("Akey");
+
   }
 }
 
