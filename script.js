@@ -1,4 +1,5 @@
 /* VARIABLES */
+let piano; 
 
 /* PRELOAD LOADS FILES */
 function preload(){
