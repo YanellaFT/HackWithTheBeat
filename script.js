@@ -7,7 +7,9 @@ let CkeyAud, DkeyAud, EkeyAud, FkeyAud, GkeyAud, AkeyAud, BkeyAud;
 function preload(){
   piano = loadImage("assets/piano.png");
 
-  //CkeyAud = loadSound("assets/Ckey.webm");
+  CkeyAud = loadSound("assets/Ckey.webm");
+  DkeyAud = loadSound("assets/Dkey.webm");
+  EkeyAud = loadSound("assets/Ekey.webm");
 }
 
 
@@ -52,17 +54,17 @@ function draw() {
 
   if (Ckey.mouse.pressed()) {
     print("Ckey");
-    //CkeyAud.play();
+    CkeyAud.play();
   }
 
   if (Dkey.mouse.pressed()) {
     print("Dkey");
-
+    DkeyAud.play();
   }
 
   if (Ekey.mouse.pressed()) {
     print("Ekey");
-
+    EkeyAud.play();
   }
 
   if (Fkey.mouse.pressed()) {
