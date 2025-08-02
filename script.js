@@ -3,7 +3,9 @@ let piano;
 let Ckey, Dkey, Ekey, Fkey, Gkey, Akey, Bkey;
 let Dbkey, Ebkey, Gbkey, Abkey, Bbkey;
 let CkeyAud, DkeyAud, EkeyAud, FkeyAud, GkeyAud, AkeyAud, BkeyAud;
+let DbkeyAud, EbkeyAud, GbkeyAud, AbkeyAud, BbkeyAud;
 let Ccir, Dcir, Ecir, Fcir, Gcir, Acir, Bcir;
+let Dbcir, Ebcir, Gbcir, Abcir, Bbcir;
 let showNoteNames, hideNoteNames;
 let showAgain = true;
 
@@ -18,6 +20,12 @@ function preload(){
   GkeyAud = loadSound("assets/Gkey.webm");
   AkeyAud = loadSound("assets/Akey.webm");
   BkeyAud = loadSound("assets/Bkey.webm");
+
+  DbkeyAud = loadSound("assets/Dbkey.webm");
+  EbkeyAyd = loadSound("assets/Ebkey.webm");
+  GbkeyAud = loadSound("assets/Gbkey.webm");
+  AbkeyAud = loadSound("assets/Abkey.webm");
+  BbkeyAud = loadSound("assets/Bbkey.webm");
 }
 
 
@@ -98,6 +106,31 @@ function setup() {
   Bcir.diameter = 10;
   Bcir.color = "pink";
   Bcir.visible = false;
+
+  Dbcir = new Sprite(-87, -250, "k");
+  Dbcir.diameter = 10;
+  Dbcir.color = "#d0580eff";
+  Dbcir.visible = false;
+
+  Ebcir = new Sprite(-173, -250, "k");
+  Ebcir.diameter = 10;
+  Ebcir.color = "#d1ab15ff";
+  Ebcir.visible = false;
+
+  Gbcir = new Sprite(-345, -250, "k");
+  Gbcir.diameter = 10;
+  Gbcir.color = "#08905aff";
+  Gbcir.visible = false;
+
+  Abcir = new Sprite(-427, -250, "k");
+  Abcir.diameter = 10;
+  Abcir.color = "#5714c1ff";
+  Abcir.visible = false;
+
+  Bbcir = new Sprite(-512, -250, "k");
+  Bbcir.diameter = 10;
+  Bbcir.color = "#be0cd2ff";
+  Bbcir.visible = false;
 
 
   //noteName button
@@ -191,27 +224,52 @@ function draw() {
 
   if (Dbkey.mouse.pressed() || kb.pressed("1")) {
     print("Dbkey");
-    //DbkeyAud.play();
+    DbkeyAud.play();
+
+    Dbcir.pos = {x: 87, y: 250};
+    Dbcir.visible = true;
+    Dbcir.diameter = random(10, 50);
+    Dbcir.vel.y = random(-8, -1);
   }
 
   if (Ebkey.mouse.pressed() || kb.pressed("2")) {
     print("Ebkey");
-    //EbkeyAud.play();
+    EbkeyAud.play();
+
+    Ebcir.pos = {x: 173, y: 250};
+    Ebcir.visible = true;
+    Ebcir.diameter = random(10, 50);
+    Ebcir.vel.y = random(-8, -1);
   }
 
   if (Gbkey.mouse.pressed() || kb.pressed("3")) {
     print("Gbkey");
-    //GbkeyAud.play();
+    GbkeyAud.play();
+
+    Gbcir.pos = {x: 345, y: 250};
+    Gbcir.visible = true;
+    Gbcir.diameter = random(10, 50);
+    Gbcir.vel.y = random(-8, -1);
   }  
 
   if (Abkey.mouse.pressed() || kb.pressed("4")) {
     print("Abkey");
-    //AbkeyAud.play();
+    AbkeyAud.play();
+
+    Abcir.pos = {x: 427, y: 250};
+    Abcir.visible = true;
+    Abcir.diameter = random(10, 50);
+    Abcir.vel.y = random(-8, -1);
   }  
 
   if (Bbkey.mouse.pressed() || kb.pressed("5")) {
     print("Bbkey");
-    //BbkeyAud.play();
+    BbkeyAud.play();
+
+    Bbcir.pos = {x: 512, y: 250};
+    Bbcir.visible = true;
+    Bbcir.diameter = random(10, 50);
+    Bbcir.vel.y = random(-8, -1);
   }  
 
   //noteName button
@@ -228,13 +286,18 @@ function draw() {
     Akey.text = "A";
     Bkey.text = "B";
 
-    fill('white');
-    Dbkey.text = "Db \n(1)";
-    Ebkey.text = "Eb \n(2)";
-    Gbkey.text = "Gb \n(3)";
-    Abkey.text = "Ab \n(4)";
-    Bbkey.text = "Bb \n(5)";
-  } 
+    Dbkey.textColor = '#ffffffff';
+    Ebkey.textColor = '#ffffffff';
+    Gbkey.textColor = '#ffffffff';
+    Abkey.textColor = '#ffffffff';
+    Bbkey.textColor = '#ffffffff';
+
+    Dbkey.text = "C#/ \nDb \n(1)";
+    Ebkey.text = "D#/ \nEb \n(2)";
+    Gbkey.text = "F#/ \nGb \n(3)";
+    Abkey.text = "G#/ \nAb \n(4)";
+    Bbkey.text = "A#/ \nBb \n(5)";
+  }
   if (hideNoteNames.mouse.pressed()) {
     showNoteNames.pos = {x: 530, y: 30}
     hideNoteNames.pos = {x: -530, y: -30};
