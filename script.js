@@ -1,3 +1,9 @@
+/*TO DO:
+1. round edges of noteName Buttons
+2. record feature
+3.bubbles = space ships in respective colors
+ */
+
 /* VARIABLES */
 let piano;
 let Ckey, Dkey, Ekey, Fkey, Gkey, Akey, Bkey;
@@ -12,6 +18,7 @@ let showAgain = true;
 
 function preload(){
   piano = loadImage("assets/piano.png");
+  starBg = loadImage("assets/starbackground.gif");
 
   CkeyAud = loadSound("assets/Ckey.webm");
   DkeyAud = loadSound("assets/Dkey.webm");
@@ -22,7 +29,7 @@ function preload(){
   BkeyAud = loadSound("assets/Bkey.webm");
 
   DbkeyAud = loadSound("assets/Dbkey.webm");
-  EbkeyAyd = loadSound("assets/Ebkey.webm");
+  EbkeyAud = loadSound("assets/Ebkey.webm");
   GbkeyAud = loadSound("assets/Gbkey.webm");
   AbkeyAud = loadSound("assets/Abkey.webm");
   BbkeyAud = loadSound("assets/Bbkey.webm");
@@ -114,7 +121,7 @@ function setup() {
 
   Ebcir = new Sprite(-173, -250, "k");
   Ebcir.diameter = 10;
-  Ebcir.color = "#d1ab15ff";
+  Ebcir.color = "#d19215ff";
   Ebcir.visible = false;
 
   Gbcir = new Sprite(-345, -250, "k");
@@ -129,7 +136,7 @@ function setup() {
 
   Bbcir = new Sprite(-512, -250, "k");
   Bbcir.diameter = 10;
-  Bbcir.color = "#be0cd2ff";
+  Bbcir.color = "#d20cc2ff";
   Bbcir.visible = false;
 
 
@@ -145,10 +152,10 @@ function setup() {
 }
 
 function draw() {
-  background("#555661");
+  background(starBg);//"#555661"
   image(piano, 0, 250, 600, 250);
   
-  fill("black");
+  fill("white");
   textFont("Verdana");
   text("Play the piano and watch it make colorful art. \nYou can use the keyboard with note names \nor your mouse to click on the piano keys.", 15, 25);
 
