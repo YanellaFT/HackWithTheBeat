@@ -1,6 +1,7 @@
 /* VARIABLES */
 let piano;
 let Ckey, Dkey, Ekey, Fkey, Gkey, Akey, Bkey;
+let Dbkey, Ebkey, Gbkey, Abkey, Bbkey;
 let CkeyAud, DkeyAud, EkeyAud, FkeyAud, GkeyAud, AkeyAud, BkeyAud;
 let Ccir, Dcir, Ecir, Fcir, Gcir, Acir, Bcir;
 let showNoteNames, hideNoteNames;
@@ -46,6 +47,21 @@ function setup() {
 
   Bkey = new Sprite(555, 445, 75, 100, "k");
   Bkey.color = "white";
+
+  Dbkey = new Sprite(87, 339, 37, 100, "k");
+  Dbkey.color = "black";
+
+  Ebkey = new Sprite(174, 339, 37, 100, "k");
+  Ebkey.color = "black";
+
+  Gbkey = new Sprite(344, 339, 37, 100, "k");
+  Gbkey.color = "black";
+
+  Abkey = new Sprite(427, 339, 37, 100, "k");
+  Abkey.color = "black";
+
+  Bbkey = new Sprite(512, 339, 37, 100, "k");
+  Bbkey.color = "black";
 
 
   //bubbles
@@ -100,6 +116,7 @@ function draw() {
   background("#555661");
   image(piano, 0, 250, 600, 250);
   
+  fill("black");
   textFont("Verdana");
   text("Play the piano and watch it make colorful art. \nYou can use the keyboard with note names \nor your mouse to click on the piano keys.", 15, 25);
 
@@ -173,11 +190,37 @@ function draw() {
     Bcir.vel.y = random(-8, -1);
   }
 
+  if (Dbkey.mouse.pressed() || kb.pressed("1")) {
+    print("Dbkey");
+    //DbkeyAud.play();
+  }
+
+  if (Ebkey.mouse.pressed() || kb.pressed("2")) {
+    print("Ebkey");
+    //EbkeyAud.play();
+  }
+
+  if (Gbkey.mouse.pressed() || kb.pressed("3")) {
+    print("Gbkey");
+    //GbkeyAud.play();
+  }  
+
+  if (Abkey.mouse.pressed() || kb.pressed("4")) {
+    print("Abkey");
+    //AbkeyAud.play();
+  }  
+
+  if (Bbkey.mouse.pressed() || kb.pressed("5")) {
+    print("Bbkey");
+    //BbkeyAud.play();
+  }  
+
   //noteName button
   if (showNoteNames.mouse.pressed()) {
     showNoteNames.pos = {x: -530, y: -30};
     hideNoteNames.pos = {x: 530, y: 30}
 
+    fill("black");
     Ckey.text = "C";
     Dkey.text = "D";
     Ekey.text = "E";
@@ -185,6 +228,13 @@ function draw() {
     Gkey.text = "G";
     Akey.text = "A";
     Bkey.text = "B";
+
+    fill('white');
+    Dbkey.text = "Db \n(1)";
+    Ebkey.text = "Eb \n(2)";
+    Gbkey.text = "Gb \n(3)";
+    Abkey.text = "Ab \n(4)";
+    Bbkey.text = "Bb \n(5)";
   } 
   if (hideNoteNames.mouse.pressed()) {
     showNoteNames.pos = {x: 530, y: 30}
@@ -197,6 +247,12 @@ function draw() {
     Gkey.text = " ";
     Akey.text = " ";
     Bkey.text = " ";
+
+    Dbkey.text = " ";
+    Ebkey.text = " ";
+    Gbkey.text = " ";
+    Abkey.text = " ";
+    Bbkey.text = " ";
   }
 
 }
