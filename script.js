@@ -66,7 +66,7 @@ function setup() {
 
   Fcir = new Sprite(-295, -250, "k");
   Fcir.diameter = 10;
-  Fcir.color = "green";
+  Fcir.color = "lightgreen";
   Fcir.visible = false;
 
   Gcir = new Sprite(-385, -250, "k");
@@ -86,14 +86,13 @@ function setup() {
 
 
   //noteName button
-  showNoteNames = new Sprite(530, 30, 110, 20, "k");
+  showNoteNames = new Sprite(530, 30, 115, 20, "k");
   showNoteNames.text = "Show Note Names";
   showNoteNames.color = "white";
 
-  hideNoteNames = new Sprite(530, 30, 110, 20, "k");
+  hideNoteNames = new Sprite(-530, -30, 115, 20, "k");
   hideNoteNames.text = "Hide Note Names";
   hideNoteNames.color = "white";
-  hideNoteNames.visible = false;
 
 }
 
@@ -101,10 +100,10 @@ function draw() {
   background("#555661");
   image(piano, 0, 250, 600, 250);
   
-  //textFont(cursive);
-  text("Play the piano and watch it make bubbles", 100, 100);
+  textFont("Verdana");
+  text("Play the piano and watch it make colorful art. \nYou can use the keyboard with note names \nor your mouse to click on the piano keys.", 15, 25);
 
-  if (Ckey.mouse.pressed()) {
+  if (Ckey.mouse.pressed() || kb.pressed("c")) {
     print("Ckey");
     CkeyAud.play();
 
@@ -114,7 +113,7 @@ function draw() {
     Ccir.vel.y = random(-8, -1);
   }
 
-  if (Dkey.mouse.pressed()) {
+  if (Dkey.mouse.pressed() || kb.pressed("d")) {
     print("Dkey");
     DkeyAud.play();
 
@@ -124,7 +123,7 @@ function draw() {
     Dcir.vel.y = random(-8, -1);
   }
 
-  if (Ekey.mouse.pressed()) {
+  if (Ekey.mouse.pressed() || kb.pressed("e")) {
     print("Ekey");
     EkeyAud.play();
 
@@ -134,7 +133,7 @@ function draw() {
     Ecir.vel.y = random(-8, -1);
   }
 
-  if (Fkey.mouse.pressed()) {
+  if (Fkey.mouse.pressed() || kb.pressed("f")) {
     print("Fkey");
     FkeyAud.play();
 
@@ -144,7 +143,7 @@ function draw() {
     Fcir.vel.y = random(-8, -1);
   }
 
-  if (Gkey.mouse.pressed()) {
+  if (Gkey.mouse.pressed() || kb.pressed("g")) {
     print("Gkey");
     GkeyAud.play();
 
@@ -154,7 +153,7 @@ function draw() {
     Gcir.vel.y = random(-8, -1);
   }
 
-  if (Akey.mouse.pressed()) {
+  if (Akey.mouse.pressed() || kb.pressed("a")) {
     print("Akey");
     AkeyAud.play();
 
@@ -164,7 +163,7 @@ function draw() {
     Acir.vel.y = random(-8, -1);
   }
 
-  if (Bkey.mouse.pressed()) {
+  if (Bkey.mouse.pressed() || kb.pressed("b")) {
     print("Bkey");
     BkeyAud.play();
 
@@ -174,16 +173,10 @@ function draw() {
     Bcir.vel.y = random(-8, -1);
   }
 
-  NoteNames();
-
-}
-
-/* FUNCTIONS */
-function NoteNames() {
-    if (showNoteNames.mouse.pressed()) {
-    showNoteNames.visible = false;
-    hideNoteNames.visible = true;
-    showAgain = false;
+  //noteName button
+  if (showNoteNames.mouse.pressed()) {
+    showNoteNames.pos = {x: -530, y: -30};
+    hideNoteNames.pos = {x: 530, y: 30}
 
     Ckey.text = "C";
     Dkey.text = "D";
@@ -194,9 +187,8 @@ function NoteNames() {
     Bkey.text = "B";
   } 
   if (hideNoteNames.mouse.pressed()) {
-    showNoteNames.visible = true;
-    hideNoteNames.visible = false;
-    showAgain = true;
+    showNoteNames.pos = {x: 530, y: 30}
+    hideNoteNames.pos = {x: -530, y: -30};
 
     Ckey.text = " ";
     Dkey.text = " ";
@@ -206,4 +198,7 @@ function NoteNames() {
     Akey.text = " ";
     Bkey.text = " ";
   }
+
 }
+
+/* FUNCTIONS */
