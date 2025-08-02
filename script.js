@@ -10,6 +10,8 @@ function preload(){
   CkeyAud = loadSound("assets/Ckey.webm");
   DkeyAud = loadSound("assets/Dkey.webm");
   EkeyAud = loadSound("assets/Ekey.webm");
+  FkeyAud = loadSound("assets/Fkey.webm");
+  GkeyAud = loadSound("assets/Gkey.webm");
 }
 
 
@@ -69,17 +71,22 @@ function draw() {
 
   if (Fkey.mouse.pressed()) {
     print("Fkey");
-
+    FkeyAud.play();
   }
 
   if (Gkey.mouse.pressed()) {
     print("Gkey");
-
+    GkeyAud.play();
   }
 
   if (Akey.mouse.pressed()) {
     print("Akey");
 
+  }
+
+  if (Bkey.mouse.pressed()) {
+    print("Bkey");
+    
   }
 }
 
