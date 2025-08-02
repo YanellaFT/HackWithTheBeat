@@ -54,6 +54,36 @@ function setup() {
   Ccir.color = "red";
   Ccir.visible = false;
 
+  Dcir = new Sprite(-130, -250, "k")
+  Dcir.diameter = 10;
+  Dcir.color = "orange";
+  Dcir.visible = false;
+
+  Ecir = new Sprite(-220, -250, "k");
+  Ecir.diameter = 10;
+  Ecir.color = "yellow";
+  Ecir.visible = false;
+
+  Fcir = new Sprite(-295, -250, "k");
+  Fcir.diameter = 10;
+  Fcir.color = "green";
+  Fcir.visible = false;
+
+  Gcir = new Sprite(-385, -250, "k");
+  Gcir.diameter = 10;
+  Gcir.color = "blue";
+  Gcir.visible = false;
+
+  Acir = new Sprite(-470, -250, "k");
+  Acir.diameter = 10;
+  Acir.color = "purple";
+  Acir.visible = false;
+
+  Bcir = new Sprite(-565, -250, "k");
+  Bcir.diameter = 10;
+  Bcir.color = "pink";
+  Bcir.visible = false;
+
 
   //noteName button
   showNoteNames = new Sprite(530, 30, 110, 20, "k");
@@ -77,43 +107,71 @@ function draw() {
   if (Ckey.mouse.pressed()) {
     print("Ckey");
     CkeyAud.play();
+
     Ccir.pos = {x: 40, y: 250};
     Ccir.visible = true;
     Ccir.diameter = random(10, 50);
-    Ccir.vel.y = random(-5, -1);
-  }
-  if (Ccir.y == 0) {
-    Ccir.pos = {x: 40, y: 250};
+    Ccir.vel.y = random(-8, -1);
   }
 
   if (Dkey.mouse.pressed()) {
     print("Dkey");
     DkeyAud.play();
+
+    Dcir.pos = {x: 130, y: 250};
+    Dcir.visible = true;
+    Dcir.diameter = random(10, 50);
+    Dcir.vel.y = random(-8, -1);
   }
 
   if (Ekey.mouse.pressed()) {
     print("Ekey");
     EkeyAud.play();
+
+    Ecir.pos = {x: 220, y: 250};
+    Ecir.visible = true;
+    Ecir.diameter = random(10, 50);
+    Ecir.vel.y = random(-8, -1);
   }
 
   if (Fkey.mouse.pressed()) {
     print("Fkey");
     FkeyAud.play();
+
+    Fcir.pos = {x: 295, y: 250};
+    Fcir.visible = true;
+    Fcir.diameter = random(10, 50);
+    Fcir.vel.y = random(-8, -1);
   }
 
   if (Gkey.mouse.pressed()) {
     print("Gkey");
     GkeyAud.play();
+
+    Gcir.pos = {x: 385, y: 250};
+    Gcir.visible = true;
+    Gcir.diameter = random(10, 50);
+    Gcir.vel.y = random(-8, -1);
   }
 
   if (Akey.mouse.pressed()) {
     print("Akey");
     AkeyAud.play();
+
+    Acir.pos = {x: 470, y: 250};
+    Acir.visible = true;
+    Acir.diameter = random(10, 50);
+    Acir.vel.y = random(-8, -1);
   }
 
   if (Bkey.mouse.pressed()) {
     print("Bkey");
     BkeyAud.play();
+
+    Bcir.pos = {x: 565, y: 250};
+    Bcir.visible = true;
+    Bcir.diameter = random(10, 50);
+    Bcir.vel.y = random(-8, -1);
   }
 
   NoteNames();
