@@ -2,6 +2,9 @@
 let piano;
 let Ckey, Dkey, Ekey, Fkey, Gkey, Akey, Bkey;
 let CkeyAud, DkeyAud, EkeyAud, FkeyAud, GkeyAud, AkeyAud, BkeyAud;
+let Ccir, Dcir, Ecir, Fcir, Gcir, Acir, Bcir;
+let showNoteNames, hideNoteNames;
+let showAgain = true;
 
 
 function preload(){
@@ -19,15 +22,9 @@ function preload(){
 
 function setup() {
   createCanvas(600,500);
-  background("#555661");
-  image(piano, 0, 250, 600, 250);
-  //piano.layer = 1;
 
-  //textFont(cursive);
-  text("Play the piano and watch it make art", 100, 100);
-  
-
-  stroke("white");
+  noStroke();
+  //Keys
   Ckey = new Sprite(45, 445, 75, 100, "k");
   Ckey.color = "white";
   //Ckey.layer = 2;
@@ -51,14 +48,42 @@ function setup() {
   Bkey.color = "white";
 
 
+  //bubbles
+  Ccir = new Sprite(-40, -250, "k");
+  Ccir.diameter = 10;
+  Ccir.color = "red";
+  Ccir.visible = false;
+
+
+  //noteName button
+  showNoteNames = new Sprite(530, 30, 110, 20, "k");
+  showNoteNames.text = "Show Note Names";
+  showNoteNames.color = "white";
+
+  hideNoteNames = new Sprite(530, 30, 110, 20, "k");
+  hideNoteNames.text = "Hide Note Names";
+  hideNoteNames.color = "white";
+  hideNoteNames.visible = false;
+
 }
 
-
 function draw() {
+  background("#555661");
+  image(piano, 0, 250, 600, 250);
+  
+  //textFont(cursive);
+  text("Play the piano and watch it make bubbles", 100, 100);
 
   if (Ckey.mouse.pressed()) {
     print("Ckey");
     CkeyAud.play();
+    Ccir.pos = {x: 40, y: 250};
+    Ccir.visible = true;
+    Ccir.diameter = random(10, 50);
+    Ccir.vel.y = random(-5, -1);
+  }
+  if (Ccir.y == 0) {
+    Ccir.pos = {x: 40, y: 250};
   }
 
   if (Dkey.mouse.pressed()) {
@@ -90,6 +115,37 @@ function draw() {
     print("Bkey");
     BkeyAud.play();
   }
+
+  NoteNames();
+
 }
 
 /* FUNCTIONS */
+function NoteNames() {
+    if (showNoteNames.mouse.pressed()) {
+    showNoteNames.visible = false;
+    hideNoteNames.visible = true;
+    showAgain = false;
+
+    Ckey.text = "C";
+    Dkey.text = "D";
+    Ekey.text = "E";
+    Fkey.text = "F";
+    Gkey.text = "G";
+    Akey.text = "A";
+    Bkey.text = "B";
+  } 
+  if (hideNoteNames.mouse.pressed()) {
+    showNoteNames.visible = true;
+    hideNoteNames.visible = false;
+    showAgain = true;
+
+    Ckey.text = " ";
+    Dkey.text = " ";
+    Ekey.text = " ";
+    Fkey.text = " ";
+    Gkey.text = " ";
+    Akey.text = " ";
+    Bkey.text = " ";
+  }
+}
