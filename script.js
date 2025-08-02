@@ -28,7 +28,6 @@ function setup() {
   //Keys
   Ckey = new Sprite(45, 445, 75, 100, "k");
   Ckey.color = "white";
-  //Ckey.layer = 2;
 
   Dkey = new Sprite(130, 445, 75, 100, "k");
   Dkey.color = "white";
