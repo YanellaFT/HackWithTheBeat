@@ -12,8 +12,6 @@ let DbkeyAud, EbkeyAud, GbkeyAud, AbkeyAud, BbkeyAud;
 let Ccir, Dcir, Ecir, Fcir, Gcir, Acir, Bcir;
 let Dbcir, Ebcir, Gbcir, Abcir, Bbcir;
 let showNoteNames, hideNoteNames;
-let showAgain = true;
-
 
 function preload(){
   piano = loadImage("assets/piano.png");
@@ -260,9 +258,8 @@ function draw() {
 
     Dbcir.pos = {x: 87, y: 250};
     Dbcir.visible = true;
-    //Dbcir.diameter = random(10, 50);
+    Dbcir.diameter = random(10, 50);
     Dbcir.vel.y = random(-8, -1);
-    Dbstar.resize = (0, random(0, 50));
   }
 
   if (Ebkey.mouse.pressed() || kb.pressed("2")) {
@@ -304,51 +301,6 @@ function draw() {
     Bbcir.diameter = random(10, 50);
     Bbcir.vel.y = random(-8, -1);
   }  
-
-  //noteName button
- /* if (showNoteNames.mouse.Pressed()) {
-    showNoteNames.position(-470, -30);
-    hideNoteNames.pos = {x: 530, y: 30}
-
-    fill("black");
-    Ckey.text = "C";
-    Dkey.text = "D";
-    Ekey.text = "E";
-    Fkey.text = "F";
-    Gkey.text = "G";
-    Akey.text = "A";
-    Bkey.text = "B";
-
-    Dbkey.textColor = '#ffffffff';
-    Ebkey.textColor = '#ffffffff';
-    Gbkey.textColor = '#ffffffff';
-    Abkey.textColor = '#ffffffff';
-    Bbkey.textColor = '#ffffffff';
-
-    Dbkey.text = "C#/ \nDb \n(1)";
-    Ebkey.text = "D#/ \nEb \n(2)";
-    Gbkey.text = "F#/ \nGb \n(3)";
-    Abkey.text = "G#/ \nAb \n(4)";
-    Bbkey.text = "A#/ \nBb \n(5)";
-  }
-  if (hideNoteNames.mouse.pressed()) {
-    showNoteNames.pos = {x: 530, y: 30}
-    hideNoteNames.pos = {x: -530, y: -30};
-
-    Ckey.text = " ";
-    Dkey.text = " ";
-    Ekey.text = " ";
-    Fkey.text = " ";
-    Gkey.text = " ";
-    Akey.text = " ";
-    Bkey.text = " ";
-
-    Dbkey.text = " ";
-    Ebkey.text = " ";
-    Gbkey.text = " ";
-    Abkey.text = " ";
-    Bbkey.text = " ";
-  }*/
 
 }
 
