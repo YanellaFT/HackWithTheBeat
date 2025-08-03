@@ -1,6 +1,6 @@
 /*TO DO:
 1. record feature
-2.bubbles = space ships in respective colors!!!!!!!
+2.bubbles = space ships in respective colors!!!!!!!asdfasdfasdfasdfasadfasdf
  */
 
 /* VARIABLES */
@@ -19,7 +19,19 @@ function preload(){
   piano = loadImage("assets/piano.png");
   starBg = loadImage("assets/starbackground.gif");
 
-  red = loadImage("redrock.png");
+  Crock = loadImage("assets/Crock-removebg-preview.png");  
+  Drock = loadImage("assets/Drock-removebg-preview.png");
+  Erock = loadImage("assets/Erock-removebg-preview.png");
+  Frock = loadImage("assets/Frock-removebg-preview.png");
+  Grock = loadImage("assets/Grock-removebg-preview.png");
+  Arock = loadImage("assets/Arock-removebg-preview.png");
+  Brock = loadImage("assets/Brock-removebg-preview.png");
+
+  Dbstar = loadImage("assets/Dbrock-removebg-preview.png");
+  Ebstar = loadImage("assets/Ebrock-removebg-preview.png");
+  Gbstar = loadImage("assets/Gbrock-removebg-preview.png");
+  Abstar = loadImage("assets/Abrock-removebg-preview.png");
+  Bbstar = loadImage("assets/Bbrock-removebg-preview.png");
 
   CkeyAud = loadSound("assets/Ckey.webm");
   DkeyAud = loadSound("assets/Dkey.webm");
@@ -81,15 +93,14 @@ function setup() {
 
   //bubbles
   Ccir = new Sprite(-40, -250, "k");
-  Ccir.diameter = 10;
-  Ccir.color = "red";
   Ccir.visible = false;
-  Ccir.image = red;
+  Ccir.color = "red";
+  Ccir.diameter = 10;
 
   Dcir = new Sprite(-130, -250, "k")
-  Dcir.diameter = 10;
-  Dcir.color = "orange";
   Dcir.visible = false;
+  Dcir.color = "red";
+  Dcir.diameter = 10;
 
   Ecir = new Sprite(-220, -250, "k");
   Ecir.diameter = 10;
