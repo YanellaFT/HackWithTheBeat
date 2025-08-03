@@ -19,7 +19,7 @@ function preload(){
   piano = loadImage("assets/piano.png");
   starBg = loadImage("assets/starbackground.gif");
 
-  Crock = loadImage("assets/Crock-removebg-preview.png");  
+  /*Crock = loadImage("assets/Crock-removebg-preview.png");  
   Drock = loadImage("assets/Drock-removebg-preview.png");
   Erock = loadImage("assets/Erock-removebg-preview.png");
   Frock = loadImage("assets/Frock-removebg-preview.png");
@@ -31,7 +31,7 @@ function preload(){
   Ebstar = loadImage("assets/Ebrock-removebg-preview.png");
   Gbstar = loadImage("assets/Gbrock-removebg-preview.png");
   Abstar = loadImage("assets/Abrock-removebg-preview.png");
-  Bbstar = loadImage("assets/Bbrock-removebg-preview.png");
+  Bbstar = loadImage("assets/Bbrock-removebg-preview.png");*/
 
   CkeyAud = loadSound("assets/Ckey.webm");
   DkeyAud = loadSound("assets/Dkey.webm");
@@ -99,7 +99,7 @@ function setup() {
 
   Dcir = new Sprite(-130, -250, "k")
   Dcir.visible = false;
-  Dcir.color = "red";
+  Dcir.color = "orange";
   Dcir.diameter = 10;
 
   Ecir = new Sprite(-220, -250, "k");
@@ -260,8 +260,9 @@ function draw() {
 
     Dbcir.pos = {x: 87, y: 250};
     Dbcir.visible = true;
-    Dbcir.diameter = random(10, 50);
+    //Dbcir.diameter = random(10, 50);
     Dbcir.vel.y = random(-8, -1);
+    Dbstar.resize = (0, random(0, 50));
   }
 
   if (Ebkey.mouse.pressed() || kb.pressed("2")) {
