@@ -1,7 +1,6 @@
 /*TO DO:
-1. round edges of noteName Buttons
-2. record feature
-3.bubbles = space ships in respective colors
+1. record feature
+2.bubbles = space ships in respective colors!!!!!!!
  */
 
 /* VARIABLES */
@@ -19,6 +18,8 @@ let showAgain = true;
 function preload(){
   piano = loadImage("assets/piano.png");
   starBg = loadImage("assets/starbackground.gif");
+
+  red = loadImage("redrock.png");
 
   CkeyAud = loadSound("assets/Ckey.webm");
   DkeyAud = loadSound("assets/Dkey.webm");
@@ -83,6 +84,7 @@ function setup() {
   Ccir.diameter = 10;
   Ccir.color = "red";
   Ccir.visible = false;
+  Ccir.image = red;
 
   Dcir = new Sprite(-130, -250, "k")
   Dcir.diameter = 10;
@@ -141,13 +143,25 @@ function setup() {
 
 
   //noteName button
-  showNoteNames = new Sprite(530, 30, 115, 20, "k");
-  showNoteNames.text = "Show Note Names";
-  showNoteNames.color = "white";
+  showNoteNames = createButton("Show Note Names");
+  showNoteNames.position(470, 30);
+  showNoteNames.style("font-size", "12px");
+  showNoteNames.style("color", "black");
+  showNoteNames.style("background-color", "white");
+  showNoteNames.style("border-color", "white");
+  showNoteNames.style("border-width", "5px");
+  showNoteNames.style("border-radius", "7px");
+  showNoteNames.mousePressed(noteNamesShow);
 
-  hideNoteNames = new Sprite(-530, -30, 115, 20, "k");
-  hideNoteNames.text = "Hide Note Names";
-  hideNoteNames.color = "white";
+  hideNoteNames = createButton("Hide Note Names");
+  hideNoteNames.position(-470, -30);
+  hideNoteNames.style("font-size", "12px");
+  hideNoteNames.style("color", "black");
+  hideNoteNames.style("background-color", "white");
+  hideNoteNames.style("border-color", "white");
+  hideNoteNames.style("border-width", "5px");
+  hideNoteNames.style("border-radius", "7px");
+  hideNoteNames.mousePressed(hideNotes);
 
 }
 
@@ -280,8 +294,8 @@ function draw() {
   }  
 
   //noteName button
-  if (showNoteNames.mouse.pressed()) {
-    showNoteNames.pos = {x: -530, y: -30};
+ /* if (showNoteNames.mouse.Pressed()) {
+    showNoteNames.position(-470, -30);
     hideNoteNames.pos = {x: 530, y: 30}
 
     fill("black");
@@ -322,8 +336,51 @@ function draw() {
     Gbkey.text = " ";
     Abkey.text = " ";
     Bbkey.text = " ";
-  }
+  }*/
 
 }
 
 /* FUNCTIONS */
+function noteNamesShow() {
+  showNoteNames.position(-470, -30);
+  hideNoteNames.position(470, 30);
+
+  fill("black");
+  Ckey.text = "C";
+  Dkey.text = "D";
+  Ekey.text = "E";
+  Fkey.text = "F";
+  Gkey.text = "G";
+  Akey.text = "A";
+  Bkey.text = "B";
+
+  Dbkey.textColor = '#ffffffff';
+  Ebkey.textColor = '#ffffffff';
+  Gbkey.textColor = '#ffffffff';
+  Abkey.textColor = '#ffffffff';
+  Bbkey.textColor = '#ffffffff';
+
+  Dbkey.text = "C#/ \nDb \n(1)";
+  Ebkey.text = "D#/ \nEb \n(2)";
+  Gbkey.text = "F#/ \nGb \n(3)";
+  Abkey.text = "G#/ \nAb \n(4)";
+  Bbkey.text = "A#/ \nBb \n(5)";
+}
+function hideNotes() {
+  showNoteNames.position(470, 30);
+  hideNoteNames.position(-470, -30);
+
+  Ckey.text = " ";
+  Dkey.text = " ";
+  Ekey.text = " ";
+  Fkey.text = " ";
+  Gkey.text = " ";
+  Akey.text = " ";
+  Bkey.text = " ";
+
+  Dbkey.text = " ";
+  Ebkey.text = " ";
+  Gbkey.text = " ";
+  Abkey.text = " ";
+  Bbkey.text = " ";
+}
