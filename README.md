@@ -1,4 +1,4 @@
-# Hack With The Beat Project
+# GalacticPiano
 
 Play the piano and watch it make colorful art. You can use the keyboard with note names or your mouse to click on the piano keys.
 
