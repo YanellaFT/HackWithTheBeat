@@ -1,6 +1,5 @@
 /*TO DO:
 1. record feature
-2.bubbles = space ships in respective colors!!!!!!!asdfasdfasdfasdfasadfasdf
  */
 
 /* VARIABLES */
@@ -17,7 +16,7 @@ function preload(){
   piano = loadImage("assets/piano.png");
   starBg = loadImage("assets/starbackground.gif");
 
-  /*Crock = loadImage("assets/Crock-removebg-preview.png");  
+  Crock = loadImage("assets/Crock-removebg-preview.png");  
   Drock = loadImage("assets/Drock-removebg-preview.png");
   Erock = loadImage("assets/Erock-removebg-preview.png");
   Frock = loadImage("assets/Frock-removebg-preview.png");
@@ -29,7 +28,7 @@ function preload(){
   Ebstar = loadImage("assets/Ebrock-removebg-preview.png");
   Gbstar = loadImage("assets/Gbrock-removebg-preview.png");
   Abstar = loadImage("assets/Abrock-removebg-preview.png");
-  Bbstar = loadImage("assets/Bbrock-removebg-preview.png");*/
+  Bbstar = loadImage("assets/Bbrock-removebg-preview.png");
 
   CkeyAud = loadSound("assets/Ckey.webm");
   DkeyAud = loadSound("assets/Dkey.webm");
@@ -93,60 +92,61 @@ function setup() {
   Ccir = new Sprite(-40, -250, "k");
   Ccir.visible = false;
   Ccir.color = "red";
-  Ccir.diameter = 10;
+  Ccir.image = Crock;
+  Crock.resize(0, 30);
 
   Dcir = new Sprite(-130, -250, "k")
   Dcir.visible = false;
   Dcir.color = "orange";
-  Dcir.diameter = 10;
+  Dcir.image = Drock; 
 
   Ecir = new Sprite(-220, -250, "k");
-  Ecir.diameter = 10;
+  Ecir.image = Erock; 
   Ecir.color = "yellow";
   Ecir.visible = false;
 
   Fcir = new Sprite(-295, -250, "k");
-  Fcir.diameter = 10;
+  Fcir.image = Frock;
   Fcir.color = "lightgreen";
   Fcir.visible = false;
 
   Gcir = new Sprite(-385, -250, "k");
-  Gcir.diameter = 10;
+  Gcir.image = Grock;
   Gcir.color = "blue";
   Gcir.visible = false;
 
   Acir = new Sprite(-470, -250, "k");
-  Acir.diameter = 10;
+  Acir.image = Arock;
   Acir.color = "purple";
   Acir.visible = false;
 
   Bcir = new Sprite(-565, -250, "k");
-  Bcir.diameter = 10;
+  Bcir.image = Brock;
   Bcir.color = "pink";
   Bcir.visible = false;
 
   Dbcir = new Sprite(-87, -250, "k");
-  Dbcir.diameter = 10;
+  Dbcir.image = Dbstar;
   Dbcir.color = "#d0580eff";
   Dbcir.visible = false;
 
   Ebcir = new Sprite(-173, -250, "k");
-  Ebcir.diameter = 10;
+  Ebcir.image = Ebstar;
   Ebcir.color = "#d19215ff";
   Ebcir.visible = false;
 
   Gbcir = new Sprite(-345, -250, "k");
-  Gbcir.diameter = 10;
+  Gbcir.image = Gbstar;
   Gbcir.color = "#08905aff";
   Gbcir.visible = false;
 
   Abcir = new Sprite(-427, -250, "k");
-  Abcir.diameter = 10;
+  Abcir.image = Abstar;
   Abcir.color = "#5714c1ff";
   Abcir.visible = false;
 
   Bbcir = new Sprite(-512, -250, "k");
-  Bbcir.diameter = 10;
+  Bbcir.image = Bbstar;
   Bbcir.color = "#d20cc2ff";
   Bbcir.visible = false;
 
@@ -188,8 +188,8 @@ function draw() {
 
     Ccir.pos = {x: 40, y: 250};
     Ccir.visible = true;
-    Ccir.diameter = random(10, 50);
     Ccir.vel.y = random(-8, -1);
+    Crock.resize(0, random(20, 80));
   }
 
   if (Dkey.mouse.pressed() || kb.pressed("d")) {
@@ -198,8 +198,8 @@ function draw() {
 
     Dcir.pos = {x: 130, y: 250};
     Dcir.visible = true;
-    Dcir.diameter = random(10, 50);
     Dcir.vel.y = random(-8, -1);
+    Drock.resize(0, random(20, 80));
   }
 
   if (Ekey.mouse.pressed() || kb.pressed("e")) {
@@ -208,7 +208,7 @@ function draw() {
 
     Ecir.pos = {x: 220, y: 250};
     Ecir.visible = true;
-    Ecir.diameter = random(10, 50);
+    Erock.resize(0, random(20, 80));
     Ecir.vel.y = random(-8, -1);
   }
 
@@ -218,7 +218,7 @@ function draw() {
 
     Fcir.pos = {x: 295, y: 250};
     Fcir.visible = true;
-    Fcir.diameter = random(10, 50);
+    Frock.resize(0, random(20, 80));
     Fcir.vel.y = random(-8, -1);
   }
 
@@ -228,7 +228,7 @@ function draw() {
 
     Gcir.pos = {x: 385, y: 250};
     Gcir.visible = true;
-    Gcir.diameter = random(10, 50);
+    Grock.resize(0, random(20, 80));
     Gcir.vel.y = random(-8, -1);
   }
 
@@ -238,7 +238,7 @@ function draw() {
 
     Acir.pos = {x: 470, y: 250};
     Acir.visible = true;
-    Acir.diameter = random(10, 50);
+    Arock.resize(0, random(20, 80));
     Acir.vel.y = random(-8, -1);
   }
 
@@ -248,7 +248,7 @@ function draw() {
 
     Bcir.pos = {x: 565, y: 250};
     Bcir.visible = true;
-    Bcir.diameter = random(10, 50);
+    Brock.resize(0, random(20, 80));
     Bcir.vel.y = random(-8, -1);
   }
 
@@ -258,7 +258,7 @@ function draw() {
 
     Dbcir.pos = {x: 87, y: 250};
     Dbcir.visible = true;
-    Dbcir.diameter = random(10, 50);
+    Dbstar.resize(0, random(10, 40));
     Dbcir.vel.y = random(-8, -1);
   }
 
@@ -268,7 +268,7 @@ function draw() {
 
     Ebcir.pos = {x: 173, y: 250};
     Ebcir.visible = true;
-    Ebcir.diameter = random(10, 50);
+    Ebstar.resize(0, random(10, 40));
     Ebcir.vel.y = random(-8, -1);
   }
 
@@ -278,7 +278,7 @@ function draw() {
 
     Gbcir.pos = {x: 345, y: 250};
     Gbcir.visible = true;
-    Gbcir.diameter = random(10, 50);
+    Gbstar.resize(0, random(10, 40));
     Gbcir.vel.y = random(-8, -1);
   }  
 
@@ -288,7 +288,7 @@ function draw() {
 
     Abcir.pos = {x: 427, y: 250};
     Abcir.visible = true;
-    Abcir.diameter = random(10, 50);
+    Abstar.resize(0, random(10, 40));
     Abcir.vel.y = random(-8, -1);
   }  
 
@@ -298,7 +298,7 @@ function draw() {
 
     Bbcir.pos = {x: 512, y: 250};
     Bbcir.visible = true;
-    Bbcir.diameter = random(10, 50);
+    Bbstar.resize(0, random(10, 40)); 
     Bbcir.vel.y = random(-8, -1);
   }  
 
