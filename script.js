@@ -181,7 +181,7 @@ function setup() {
   recordButton.style("border-color", "white");
   recordButton.style("border-width", "5px");
   recordButton.style("border-radius", "7px");
-  recordButton.mousePressed(startRecording);
+  recordButton.mousePressed(startRecording());
 }
 
 function draw() {
@@ -359,16 +359,6 @@ function hideNotes() {
   Bbkey.text = " ";
 }
 
-const audioCtx = new AudioContext();
-const gainNode = audioCtx.createGain();
-gainNode.connect(AudioCtx.destination);
-
-const recording_toggle = recordButton;
-var blob, recorder = null;
-var chunks = [];
 function startRecording() {
-  recordButton.style("text", "Stop Recording");
-  const canvasStream = canvas.captureStream(30);
-  const audioDestination = AudioCtx.createMediaStreamDestination();
-  const combinedStream = new MediaStream();
+  saveGif('myRecording', 10);
 }
