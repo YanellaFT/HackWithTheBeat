@@ -359,6 +359,9 @@ function hideNotes() {
   Bbkey.text = " ";
 }
 
+
 function startRecording() {
-  saveGif('myRecording', 10);
+  //saveGif('myRecording', 10);
+  canvas.captureStream();
+  Audio.ctx();
 }
