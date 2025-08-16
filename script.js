@@ -172,6 +172,16 @@ function setup() {
   hideNoteNames.style("border-radius", "7px");
   hideNoteNames.mousePressed(hideNotes);
 
+
+  recordButton = createButton("Start Recording");
+  recordButton.position(478, 70);
+  recordButton.style("font-size", "12px");
+  recordButton.style("color", "black");
+  recordButton.style("background-color", "white");
+  recordButton.style("border-color", "white");
+  recordButton.style("border-width", "5px");
+  recordButton.style("border-radius", "7px");
+  recordButton.mousePressed(startRecording);
 }
 
 function draw() {
@@ -347,4 +357,18 @@ function hideNotes() {
   Gbkey.text = " ";
   Abkey.text = " ";
   Bbkey.text = " ";
+}
+
+const audioCtx = new AudioContext();
+const gainNode = audioCtx.createGain();
+gainNode.connect(AudioCtx.destination);
+
+const recording_toggle = recordButton;
+var blob, recorder = null;
+var chunks = [];
+function startRecording() {
+  recordButton.style("text", "Stop Recording");
+  const canvasStream = canvas.captureStream(30);
+  const audioDestination = AudioCtx.createMediaStreamDestination();
+  const combinedStream = new MediaStream();
 }
