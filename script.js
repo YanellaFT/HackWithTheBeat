@@ -375,13 +375,20 @@ function startRecording() {
   stopButton.position(478, 70);
   recordButton.position(-478, -70);
 
-  
-  
+  //p5.capture.start(); dont need this if saved in html
+  //p5.sound.start() dont think this works
+
+  recorder = new p5.SoundRecorder();
+  soundFile = new p5.SoundFile();
+  recorder.record(soundFile);
 }
 
 function stopRecording() {
   stopButton.position(-478, -70);
   recordButton.position(478, 70);
+
+  //p5.capture.stop(); dont need this if saved in html
+  //p5.sound.stop() dont think this works
+  saveSound();
+  recorder.stop();
 }
-
-
