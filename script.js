@@ -192,7 +192,7 @@ function setup() {
   stopButton.style("border-color", "white");
   stopButton.style("border-width", "5px");
   stopButton.style("border-radius", "7px");
-  stopButton.mousePressed(stopRecording);
+  //stopButton.mousePressed(stopRecording);
 }
 
 function draw() {
@@ -379,7 +379,7 @@ function startRecording() {
   //p5.sound.start() dont think this works
 
   recorder = new p5.SoundRecorder();
-  soundFile = new p5.SoundFile();
+  soundFile = new p5.SoundFile(.webm);
   recorder.record(soundFile);
 }
 
@@ -389,6 +389,6 @@ function stopRecording() {
 
   //p5.capture.stop(); dont need this if saved in html
   //p5.sound.stop() dont think this works
-  saveSound();
+  save.soundFile();
   recorder.stop();
 }
