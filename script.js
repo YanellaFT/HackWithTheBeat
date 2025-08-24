@@ -11,6 +11,7 @@ let DbkeyAud, EbkeyAud, GbkeyAud, AbkeyAud, BbkeyAud;
 let Ccir, Dcir, Ecir, Fcir, Gcir, Acir, Bcir;
 let Dbcir, Ebcir, Gbcir, Abcir, Bbcir;
 let showNoteNames, hideNoteNames;
+let recordButton, stopButton;
 
 function preload(){
   piano = loadImage("assets/piano.png");
@@ -181,7 +182,17 @@ function setup() {
   recordButton.style("border-color", "white");
   recordButton.style("border-width", "5px");
   recordButton.style("border-radius", "7px");
-  //recordButton.mousePressed(startRecording());
+  recordButton.mousePressed(startRecording);
+
+  stopButton = createButton("Stop Recording");
+  stopButton.position(-478, -70);
+  stopButton.style("font-size", "12px");
+  stopButton.style("color", "black");
+  stopButton.style("background-color", "white");
+  stopButton.style("border-color", "white");
+  stopButton.style("border-width", "5px");
+  stopButton.style("border-radius", "7px");
+  stopButton.mousePressed(stopRecording);
 }
 
 function draw() {
@@ -357,6 +368,20 @@ function hideNotes() {
   Gbkey.text = " ";
   Abkey.text = " ";
   Bbkey.text = " ";
+}
+
+function startRecording() {
+  //recordButton.style("text", "Stop Recording");
+  stopButton.position(478, 70);
+  recordButton.position(-478, -70);
+
+  
+  
+}
+
+function stopRecording() {
+  stopButton.position(-478, -70);
+  recordButton.position(478, 70);
 }
 
 
