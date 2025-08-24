@@ -173,7 +173,7 @@ function setup() {
   hideNoteNames.mousePressed(hideNotes);
 
 
-  /*recordButton = createButton("Start Recording");
+  recordButton = createButton("Start Recording");
   recordButton.position(478, 70);
   recordButton.style("font-size", "12px");
   recordButton.style("color", "black");
@@ -181,7 +181,7 @@ function setup() {
   recordButton.style("border-color", "white");
   recordButton.style("border-width", "5px");
   recordButton.style("border-radius", "7px");
-  recordButton.mousePressed(startRecording());*/
+  //recordButton.mousePressed(startRecording());
 }
 
 function draw() {
@@ -360,8 +360,3 @@ function hideNotes() {
 }
 
 
-/*function startRecording() {
-  //saveGif('myRecording', 10);
-  canvas.captureStream();
-  Audio.ctx();
-}*/
