@@ -177,7 +177,7 @@ function setup() {
   recordButton = createButton("Start Recording");
   recordButton.position(478, 70);
   recordButton.style("font-size", "12px");
-  recordButton.style("color", "black");
+  //recordButton.style("color", "black");
   recordButton.style("background-color", "white");
   recordButton.style("border-color", "white");
   recordButton.style("border-width", "5px");
@@ -375,20 +375,22 @@ function startRecording() {
   stopButton.position(478, 70);
   recordButton.position(-478, -70);
 
-  //p5.capture.start(); dont need this if saved in html
+  //p5.capture.start();  dont need this if saved in html
   //p5.sound.start() dont think this works
 
-  recorder = new p5.SoundRecorder();
+
+  recorder = new p5.SoundRecorder(.webm);
   soundFile = new p5.SoundFile(.webm);
-  recorder.record(soundFile);
+  recorder.record(soundFile); 
+
 }
 
 function stopRecording() {
   stopButton.position(-478, -70);
   recordButton.position(478, 70);
 
-  //p5.capture.stop(); dont need this if saved in html
+  //stop(p5.capture); dont need this if saved in html
   //p5.sound.stop() dont think this works
-  save.soundFile();
+  save.soundFile(soundFile);
   recorder.stop();
-}
+} //
