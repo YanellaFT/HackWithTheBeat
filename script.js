@@ -1,7 +1,3 @@
-/*TO DO:
-1. record feature
- */
-
 /* VARIABLES */
 let piano;
 let Ckey, Dkey, Ekey, Fkey, Gkey, Akey, Bkey;
@@ -154,7 +150,7 @@ function setup() {
 
   //noteName button
   showNoteNames = createButton("Show Note Names");
-  showNoteNames.position(470, 30);
+  showNoteNames.position(470, 80);
   showNoteNames.style("font-size", "12px");
   showNoteNames.style("color", "black");
   showNoteNames.style("background-color", "white");
@@ -173,7 +169,9 @@ function setup() {
   hideNoteNames.style("border-radius", "7px");
   hideNoteNames.mousePressed(hideNotes);
 
-
+  let element = document.getElementById("capture")
+  element.pos = {x: 200, y: 200}
+/*
   recordButton = createButton("Start Recording");
   recordButton.position(478, 70);
   recordButton.style("font-size", "12px");
@@ -182,7 +180,7 @@ function setup() {
   recordButton.style("border-color", "white");
   recordButton.style("border-width", "5px");
   recordButton.style("border-radius", "7px");
-  recordButton.mousePressed(startRecording);
+  recordButton.mousePressed(startRecording());
 
   stopButton = createButton("Stop Recording");
   stopButton.position(-478, -70);
@@ -193,7 +191,8 @@ function setup() {
   stopButton.style("border-width", "5px");
   stopButton.style("border-radius", "7px");
   //stopButton.mousePressed(stopRecording);
-}
+*/
+  }
 
 function draw() {
   background(starBg);//"#555661"
@@ -201,7 +200,7 @@ function draw() {
   
   fill("white");
   textFont("Verdana");
-  text("Play the piano and watch it make colorful art. \nYou can use the keyboard with note names \nor your mouse to click on the piano keys.", 15, 25);
+  text("Play the piano and watch it make colorful art. \nYou can use the keyboard with note names \nor your mouse to click on the piano keys.", 310, 25);
 
   if (Ckey.mouse.pressed() || kb.pressed("c")) {
     print("Ckey");
@@ -327,8 +326,8 @@ function draw() {
 
 /* FUNCTIONS */
 function noteNamesShow() {
-  showNoteNames.position(-470, -30);
-  hideNoteNames.position(470, 30);
+  showNoteNames.position(-470, -80);
+  hideNoteNames.position(470, 80);
 
   fill("black");
   Ckey.text = "C";
@@ -352,8 +351,8 @@ function noteNamesShow() {
   Bbkey.text = "A#/ \nBb \n(5)";
 }
 function hideNotes() {
-  showNoteNames.position(470, 30);
-  hideNoteNames.position(-470, -30);
+  showNoteNames.position(470, 80);
+  hideNoteNames.position(-470, -80);
 
   Ckey.text = " ";
   Dkey.text = " ";
@@ -369,8 +368,11 @@ function hideNotes() {
   Abkey.text = " ";
   Bbkey.text = " ";
 }
-
+/* 
 function startRecording() {
+ saveGif('myRecording', 10);
+
+
   //recordButton.style("text", "Stop Recording");
   stopButton.position(478, 70);
   recordButton.position(-478, -70);
@@ -383,8 +385,8 @@ function startRecording() {
   soundFile = new p5.SoundFile(.webm);
   recorder.record(soundFile); 
 
-}
-
+}*/
+/*
 function stopRecording() {
   stopButton.position(-478, -70);
   recordButton.position(478, 70);
@@ -393,4 +395,4 @@ function stopRecording() {
   //p5.sound.stop() dont think this works
   save.soundFile(soundFile);
   recorder.stop();
-} //
+} */ 
